@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "nx-demo",
+  "npmScope": "nx-sandbox",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -12,7 +12,12 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": [
+        {
+          "env": "MANAGEMENT_API_DATABASE_URL"
+        }
+      ]
     },
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
