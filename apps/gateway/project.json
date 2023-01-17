@@ -1,0 +1,33 @@
+{
+  "name": "gateway",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/gateway/src",
+  "projectType": "application",
+  "targets": {
+    "console": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "hasura console --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET",
+        "cwd": "apps/gateway/hasura"
+      }
+    },
+    "metadata-import": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "hasura metadata apply --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET",
+        "cwd": "apps/gateway/hasura"
+      }
+    },
+    "metadata-export": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "hasura metadata export --admin-secret $HASURA_GRAPHQL_ADMIN_SECRET",
+        "cwd": "apps/gateway/hasura"
+      }
+    }
+  },
+  "tags": []
+}

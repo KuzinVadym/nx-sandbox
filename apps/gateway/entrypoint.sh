@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+set -eu
+
+#echo "API_DATABASE_CONNECT_TIMEOUT is set to: ${API_DATABASE_CONNECT_TIMEOUT}"
+#echo "initial API_DATABASE_URL is set to: ${API_DATABASE_URL}"
+#
+#export API_DATABASE_URL=${API_DATABASE_URL}?connect_timeout=${API_DATABASE_CONNECT_TIMEOUT}
+#echo "resolved API_DATABASE_URL is set to: ${API_DATABASE_URL}"
+#
+#export HASURA_GRAPHQL_METADATA_DATABASE_URL=${API_DATABASE_URL}
+#echo "HASURA_GRAPHQL_METADATA_DATABASE_URL is set to: ${HASURA_GRAPHQL_METADATA_DATABASE_URL}"
+
+exec ./bin/graphql-engine serve "$@"

@@ -15,7 +15,10 @@
       "dependsOn": ["^build"],
       "inputs": [
         {
-          "env": "MANAGEMENT_API_DATABASE_URL"
+          "env": "API_DATABASE_URL"
+        },
+        {
+          "env": "HASURA_GRAPHQL_ADMIN_SECRET"
         }
       ]
     },

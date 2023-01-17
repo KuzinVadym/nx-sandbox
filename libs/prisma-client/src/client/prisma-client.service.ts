@@ -1,5 +1,5 @@
 import {INestApplication, Logger, OnModuleInit} from '@nestjs/common';
-import {PrismaClient, Prisma} from '../../generated';
+import {PrismaClient, Prisma} from '@prisma/prisma-api-client';
 import {InjectPinoLogger, PinoLogger} from 'nestjs-pino';
 
 export class PrismaClientService extends PrismaClient implements OnModuleInit {
