@@ -14,16 +14,16 @@ services:
     ports:
       - '5432:5432'
 
-  nest-api:
-    build:
-      context: ./
-      dockerfile: apps/nest-api/Dockerfile
-    ports:
-      - 4444:4444
-    depends_on:
-      - "postgres"
-    environment:
-      API_DATABASE_URL: postgres://myuser:mypassword@postgres:5432/sandbox-db
+#  nest-api:
+#    build:
+#      context: ./
+#      dockerfile: apps/nest-api/Dockerfile
+#    ports:
+#      - 4444:4444
+#    depends_on:
+#      - "postgres"
+#    environment:
+#      API_DATABASE_URL: postgres://myuser:mypassword@postgres:5432/sandbox-db
 
 
   graphql-engine:
@@ -52,14 +52,14 @@ services:
       ## uncomment next line to set an admin secret
       HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
 
-  ingres:
-    build:
-      context: ./
-      dockerfile: apps/ingres/Dockerfile
-    ports:
-      - "3000:80"
-    depends_on:
-      - "graphql-engine"
+#  ingres:
+#    build:
+#      context: ./
+#      dockerfile: apps/ingres/Dockerfile
+#    ports:
+#      - "3000:80"
+#    depends_on:
+#      - "graphql-engine"
 
 volumes:
   postgres:
